@@ -4,6 +4,7 @@
 <?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.geometry.Pos?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,10 +12,39 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1"
-      >
-
-    
+<VBox fx:id="background" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fitHeight="${background.height / 2}" fitWidth="${background.width}">
+        <image>
+            <Image url="@NBA_Back.jpg" />
+        </image>
+    </ImageView>
+    <VBox
+        fx:id="buttonBox"
+        spacing="20.0"
+        alignment="center"
+        VBox.vgrow="ALWAYS"
+    >
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+        <children>
+            <HBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="${buttonBox.height / 2}">
+                <Button
+                    fx:id="exploreTeamsButton"
+                    prefHeight="${exploreTeamsButton.parent.height}"
+                    text="Explore the teams"
+                    
+                />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button
+                    fx:id="newSeasonButton"
+                    prefHeight="${newSeasonButton.parent.height}"
+                    text="Arrange a new season"
+                />
+            </HBox>
+            <Button fx:id="exitButton" text="Exit" prefHeight="${buttonBox.height / 2}" />
+        </children>
+    </VBox>
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
