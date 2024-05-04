@@ -26,7 +26,7 @@ public class Game
         return this.teams;
     }
     
-        public ObservableList<Team> getCurrentTeams()
+    public ObservableList<Team> getCurrentTeams()
     {
         return this.currentTeams;
     }
