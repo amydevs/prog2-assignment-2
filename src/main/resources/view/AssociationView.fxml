@@ -12,7 +12,15 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="background" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+<VBox
+    fx:id="background"
+    styleClass="background"
+    prefHeight="420.0"
+    prefWidth="600.0"
+    spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="controller.AssociationController"
+>
     <ImageView fitHeight="${background.height / 2}" fitWidth="${background.width}">
         <image>
             <Image url="@NBA_Back.jpg" />
@@ -31,27 +39,33 @@
         <children>
             <Button
                 fx:id="exploreTeamsButton"
+                onAction="#exploreTeams"
                 text="Explore the teams"
                 GridPane.columnIndex="0"
                 GridPane.rowIndex="0"
                 GridPane.vgrow="ALWAYS"
                 GridPane.hgrow="ALWAYS"
+                GridPane.halignment="CENTER"
             />
             <Button
                 fx:id="newSeasonButton"
+                onAction="#newSeason"
                 text="Arrange a new season"
                 GridPane.columnIndex="2"
                 GridPane.rowIndex="0"
                 GridPane.vgrow="ALWAYS"
                 GridPane.hgrow="ALWAYS"
+                GridPane.halignment="CENTER"
             />
             <Button
                 fx:id="exitButton"
+                onAction="#exit"
                 text="Exit"
                 GridPane.columnIndex="1"
                 GridPane.rowIndex="1"
                 GridPane.vgrow="ALWAYS"
                 GridPane.hgrow="ALWAYS"
+                GridPane.halignment="CENTER"
             />
         </children>
     </GridPane>

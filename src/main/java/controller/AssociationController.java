@@ -46,7 +46,7 @@ public class AssociationController extends Controller<Association> {
     }
     @FXML
     public void newSeason() {
-      try {
+        try {
             Stage stage = new Stage();
             stage.setX(ViewLoader.X + 601);
             stage.setY(ViewLoader.Y);

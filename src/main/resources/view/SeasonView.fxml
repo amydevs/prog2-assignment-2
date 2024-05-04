@@ -11,13 +11,24 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox  alignment="CENTER" styleClass="background" prefHeight="450.0" prefWidth="350.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1"
-       >
-
+<VBox
+    alignment="CENTER"
+    fx:id="background"
+    styleClass="background"
+    prefHeight="450.0"
+    prefWidth="350.0"
+    spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="controller.SeasonController"
+>
+    <ImageView fitWidth="${background.width}">
+        <image>
+            <Image url="@NBA_Back.jpg" />
+        </image>
+    </ImageView>
+    <Button text="Round" />
     
-        
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
-    
 </VBox>
