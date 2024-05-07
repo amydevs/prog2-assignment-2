@@ -41,7 +41,7 @@ public class AssociationController extends Controller<Association> {
             
             ViewLoader.showStage(getAssociation().getTeams(), "/view/ExploreTeamsView.fxml", "Explore Teams", stage);
         } catch (IOException ex) {
-            Logger.getLogger(AssociationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
     }
     @FXML
@@ -53,7 +53,7 @@ public class AssociationController extends Controller<Association> {
             stage.getIcons().add(new Image("/view/nba.png"));
             ViewLoader.showStage(getAssociation().getSeason(), "/view/SeasonView.fxml", "Arrange a new season", stage);
         } catch (IOException ex) {
-            Logger.getLogger(AssociationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
     }
     @FXML

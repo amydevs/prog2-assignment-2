@@ -22,7 +22,7 @@ public class ExploreTeamsController extends Controller<Teams> {
             stage.getIcons().add(new Image("/view/nba.png"));
             ViewLoader.showStage(this.model, "/view/TeamsTable.fxml", "Teams Menu", stage);
         } catch (IOException ex) {
-            Logger.getLogger(AssociationController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
     }
 
