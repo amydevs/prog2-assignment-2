@@ -45,6 +45,34 @@ public class TeamsController extends Controller<Teams> {
     }
 
     @FXML
+    private void manageTeam() {
+        // never null due to disabled logic
+        Team team = teamsTableView.getSelectionModel().getSelectedItem();
+        try {
+            Stage stage = new Stage();
+            stage.setX(ViewLoader.X + 601);
+            stage.setY(ViewLoader.Y);
+            stage.getIcons().add(new Image("/view/nba.png"));
+            
+            ViewLoader.showStage(
+                team,
+                "/view/ManageTeamView.fxml",
+                "Managing Team: " + team.getName(),
+                stage
+            );
+        } catch (IOException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void deleteTeam() {
+        // never null due to disabled logic
+        Team team = teamsTableView.getSelectionModel().getSelectedItem();
+        this.model.remove(team);
+    }
+
+    @FXML
     private void addTeam() {
         try {
             Stage stage = new Stage();

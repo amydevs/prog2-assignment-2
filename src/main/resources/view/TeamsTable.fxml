@@ -54,8 +54,8 @@
         </padding>
         <children>
             <Button text="Add" onAction="#addTeam" />
-            <Button fx:id="manageButton" text="Manage" />
-            <Button fx:id="deleteButton" text="Delete" />
+            <Button fx:id="manageButton" text="Manage" onAction="#manageTeam" />
+            <Button fx:id="deleteButton" text="Delete" onAction="#deleteTeam" />
             <Button text="Close" onAction="#close" />
         </children>
     </HBox>

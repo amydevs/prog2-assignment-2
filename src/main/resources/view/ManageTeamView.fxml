@@ -14,9 +14,59 @@
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>  
 
-<VBox   alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1"  styleClass="background">
-    
-    
+<VBox
+    fx:controller="controller.ManageTeamController"
+    alignment="CENTER"
+    xmlns:fx="http://javafx.com/fxml/1"
+    styleClass="background"
+>
+    <HBox alignment="CENTER">
+        <padding>
+            <Insets top="5" right="5" bottom="5" left="5" />
+        </padding>
+        <children>
+            <Label text="Team Name: " styleClass="label-opac" />
+            <TextField fx:id="teamNameTextField" />
+        </children>
+    </HBox>
+    <TableView fx:id="playersTableView">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn text="Player Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Player credit">
+                <cellValueFactory>
+                    <PropertyValueFactory property="credit" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Player Age">
+                <cellValueFactory>
+                    <PropertyValueFactory property="age" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Player No">
+                <cellValueFactory>
+                    <PropertyValueFactory property="no" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <HBox spacing="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+        <children>
+            <Button text="Add" onAction="#addPlayer" />
+            <Button fx:id="updateButton" text="Update" onAction="#updatePlayer" />
+            <Button fx:id="deleteButton" text="Delete" onAction="#deletePlayer" />
+            <Button text="Save And Close" onAction="#saveAndClose" />
+        </children>
+    </HBox>
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
