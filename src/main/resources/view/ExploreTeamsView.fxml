@@ -50,6 +50,7 @@
                 GridPane.halignment="CENTER"
             />
             <Button
+                onAction="#playersMenu"
                 text="View Players"
                 GridPane.columnIndex="2"
                 GridPane.rowIndex="0"

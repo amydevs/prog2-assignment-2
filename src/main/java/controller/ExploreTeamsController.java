@@ -27,6 +27,19 @@ public class ExploreTeamsController extends Controller<Teams> {
     }
 
     @FXML
+    private void playersMenu() {
+        try {
+            Stage stage = new Stage();
+            stage.setX(ViewLoader.X + 601);
+            stage.setY(ViewLoader.Y);
+            stage.getIcons().add(new Image("/view/nba.png"));
+            ViewLoader.showStage(this.model, "/view/PlayersView.fxml", "Players", stage);
+        } catch (IOException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
     private void close() {
        this.stage.close();
     }
