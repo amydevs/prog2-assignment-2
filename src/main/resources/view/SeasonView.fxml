@@ -17,7 +17,7 @@
     styleClass="background"
     prefHeight="450.0"
     prefWidth="350.0"
-    spacing="20"
+    spacing="40"
     xmlns:fx="http://javafx.com/fxml/1"
     fx:controller="controller.SeasonController"
 >
@@ -29,16 +29,16 @@
                 <Image url="@NBA_Back.jpg" />
             </image>
         </ImageView>
-        <VBox alignment="center" spacing="40">
+        <VBox alignment="center" spacing="30">
             <padding>
-                <Insets top="10" right="10" bottom="10" left="10" />
+                <Insets top="0" right="10" bottom="10" left="10" />
             </padding>
             <children>
-                <Button text="Round" />
+                <Button text="Round" onAction="#roundMenu" />
                 <Button text="Current" />
                 <Button text="Game" />
                 <Button text="Result" />
-                <Button text="Close" />
+                <Button text="Close" onAction="#close" />
             </children>
         </VBox>
     <stylesheets>

@@ -30,6 +30,9 @@
             <columnResizePolicy>
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
             </columnResizePolicy>
+            <placeholder>
+                <Label text="Players list is not loaded."/>
+            </placeholder>
             <columns>
                 <TableColumn text="Team">
                     <cellValueFactory>
