@@ -10,11 +10,44 @@
 <?import javafx.scene.image.*?> 
 <?import javafx.geometry.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="400.0" prefWidth="600.0" spacing="20" 
-      xmlns:fx="http://javafx.com/fxml/1"  >
+<VBox
+    fx:controller="controller.PlayerUpdateController"
+    alignment="CENTER"
+    styleClass="background"
+    prefHeight="400.0"
+    prefWidth="600.0"
+    spacing="20" 
+    xmlns:fx="http://javafx.com/fxml/1"
+>
     <padding>
         <Insets top="10" bottom="10" left="5" right="5" />
     </padding>
+    <GridPane hgap="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1">
+        <Label
+            text="Player Details"
+            styleClass="label-h2"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="0"
+            GridPane.columnSpan="2" 
+        />
+
+        <Label text="Player Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="nameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Player Credit:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="creditTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        
+        <Label text="Player Age:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="ageTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        
+        <Label text="Player No:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="noTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    </GridPane>
+    <HBox alignment="CENTER" spacing="10">
+        <Button fx:id="updateButton" text="Update" onAction="#updateAddPlayer" />
+        <Button fx:id="addButton" text="Add" onAction="#updateAddPlayer" />
+        <Button text="Close" onAction="#close" />
+    </HBox>
     
     <stylesheets>
         <URL value="@style.css"/>
