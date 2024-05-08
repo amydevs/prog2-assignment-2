@@ -6,7 +6,10 @@ import java.util.logging.Logger;
 
 import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
+import model.Player;
+import model.Players;
 import model.Teams;
+import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -28,12 +31,16 @@ public class ExploreTeamsController extends Controller<Teams> {
 
     @FXML
     private void playersMenu() {
+        Players allPlayers = new Players();
+        for (Player p : this.model.allPlayersList()) {
+            allPlayers.addPlayer(p);
+        }
         try {
             Stage stage = new Stage();
             stage.setX(ViewLoader.X + 601);
             stage.setY(ViewLoader.Y);
             stage.getIcons().add(new Image("/view/nba.png"));
-            ViewLoader.showStage(this.model, "/view/PlayersView.fxml", "Players", stage);
+            ViewLoader.showStage(allPlayers, "/view/PlayersView.fxml", "Players", stage);
         } catch (IOException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
