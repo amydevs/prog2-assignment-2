@@ -9,7 +9,6 @@ import au.edu.uts.ap.javafx.ViewLoader;
 import model.Player;
 import model.Players;
 import model.Teams;
-import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
