@@ -24,14 +24,7 @@ public class AddTeamController extends Controller<Teams> {
 
     @FXML
     private void initialize() {
-        nameTextField.textProperty().addListener((_observable, _oldValue, newValue) -> {
-            if (newValue.isEmpty()) {
-                addButton.setDisable(true);
-                return;
-            }
-            addButton.setDisable(false);
-        });
-        addButton.setDisable(true);
+        this.addButton.disableProperty().bind(nameTextField.textProperty().isEmpty());
     }
 
     @FXML

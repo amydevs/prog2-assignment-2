@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
+import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
@@ -31,20 +32,12 @@ public class ManageTeamController extends Controller<Team>  {
     @FXML
     private void initialize() {
         this.teamNameTextField.setText(this.model.getName());
-        updateButton.setDisable(true);
-        deleteButton.setDisable(true);
-        playersTableView
-                .getSelectionModel()
-                .selectedItemProperty()
-                .addListener((_observable, _oldSelection, newSelection) -> {
-                    if (newSelection != null) {
-                        updateButton.setDisable(false);
-                        deleteButton.setDisable(false);
-                        return;
-                    }
-                    updateButton.setDisable(true);
-                    deleteButton.setDisable(true);
-                });
+        BooleanBinding disableBinding = this.playersTableView
+            .getSelectionModel()
+            .selectedItemProperty()
+            .isNull();
+        this.updateButton.disableProperty().bind(disableBinding);
+        this.deleteButton.disableProperty().bind(disableBinding);
         playersTableView.setItems(this.model.getCurrentPlayers());
     }
 
