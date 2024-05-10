@@ -36,7 +36,7 @@
             <children>
                 <Button text="Round" onAction="#roundMenu" />
                 <Button text="Current" />
-                <Button text="Game" />
+                <Button text="Game" onAction="#gameMenu" />
                 <Button text="Result" />
                 <Button text="Close" onAction="#close" />
             </children>

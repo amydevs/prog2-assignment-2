@@ -1,7 +1,5 @@
 package controller;
 
-import java.util.List;
-
 import au.edu.uts.ap.javafx.Controller;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
@@ -24,15 +22,12 @@ public class TeamsRoundController extends Controller<Season>  {
     @FXML
     private Button pushButton;
 
-    private Integer currentTerm;
-
     public String getRoundString() {
         return "Round: " + (this.model.round() + 1);
     }
 
     @FXML
     private void initialize() {
-        this.currentTerm = 1;
         this.teamsListView.setItems(this.model.getCurrentTeams());
         this.teamsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
@@ -66,14 +61,11 @@ public class TeamsRoundController extends Controller<Season>  {
 
     @FXML
     private void addTeamsToRound() {
-        Game game = new Game(this.currentTerm);
-        List<Team> selectedTeams = this.teamsListView.getSelectionModel().getSelectedItems();
-        for (Team t : selectedTeams) {
-            game.add(t);
-        }
-        this.model.getCurrentTeams().removeAll(selectedTeams);
-        this.model.getCurrentSchedule().add(game);
-        this.currentTerm++;
+        this.model.addTeams(
+            this.teamsListView
+                .getSelectionModel()
+                .getSelectedItems()
+        );
     }
 
     @FXML private void arrangeSeason() {
