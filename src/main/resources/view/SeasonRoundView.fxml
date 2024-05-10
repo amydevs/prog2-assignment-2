@@ -26,10 +26,17 @@
     <Label text="${controller.roundString}" styleClass="label-h2" />
     <HBox alignment="CENTER">
         <ListView fx:id="teamsListView" />
-        <Button fx:id="pushButton" text=">>>" />
-        <TableView />
+        <Button fx:id="pushButton" text=">>>" onAction="#addTeamsToRound" />
+        <TableView fx:id="gamesTableView">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <placeholder>
+                <Label text="No teams added to round"/>
+            </placeholder>
+        </TableView>
     </HBox>
-    <Button text="Arrange Season" />
+    <Button text="Arrange Season" onAction="#arrangeSeason" />
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
