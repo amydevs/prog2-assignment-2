@@ -44,6 +44,19 @@ public class SeasonController extends Controller<Season>  {
     }
 
     @FXML
+    private void currentMenu() {
+        try {
+            Stage stage = new Stage();
+            stage.setX(ViewLoader.X + 601);
+            stage.setY(ViewLoader.Y);
+            stage.getIcons().add(new Image("/view/nba.png"));
+            ViewLoader.showStage(this.model, "/view/CurrentRoundTeams.fxml", "Tournament", stage);
+        } catch (IOException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
     private void close() {
         this.stage.close();
     }

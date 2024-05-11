@@ -35,7 +35,7 @@
             </padding>
             <children>
                 <Button text="Round" onAction="#roundMenu" />
-                <Button text="Current" />
+                <Button text="Current" onAction="#currentMenu" />
                 <Button text="Game" onAction="#gameMenu" />
                 <Button text="Result" />
                 <Button text="Close" onAction="#close" />

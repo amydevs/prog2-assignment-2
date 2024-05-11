@@ -14,7 +14,24 @@
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>  
 
-<VBox styleClass="background"  alignment="CENTER" prefHeight="300" prefWidth="400" spacing="20" xmlns:fx="http://javafx.com/fxml/1" >
+<VBox
+    fx:controller="controller.CurrentRoundTeamsController"
+    styleClass="background"
+    alignment="CENTER"
+    prefHeight="300"
+    prefWidth="400"
+    spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1"
+>
+    <Label styleClass="label-h2" text="${controller.roundString}" />
+
+    <TableView prefWidth="250" prefHeight="200" fx:id="gamesTableView">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <Button text="Close" onAction="#close" />
    
     <stylesheets>
         <URL value="@style.css"/>
