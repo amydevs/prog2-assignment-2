@@ -23,15 +23,22 @@
     spacing="20"
     xmlns:fx="http://javafx.com/fxml/1"
 >
-    <Label styleClass="label-h2" text="${controller.roundString}" />
+    <padding>
+        <Insets top="10" bottom="10" left="5" right="5" />
+    </padding>
+    <children>
+        <Label styleClass="label-h2" text="${controller.roundString}" />
 
-    <TableView prefWidth="250" prefHeight="200" fx:id="gamesTableView">
-        <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
-        </columnResizePolicy>
-    </TableView>
+        <HBox alignment="CENTER">
+            <TableView prefWidth="300" prefHeight="250" fx:id="gamesTableView">
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+        </HBox>
 
-    <Button text="Close" onAction="#close" />
+        <Button text="Close" onAction="#close" />
+    </children>
    
     <stylesheets>
         <URL value="@style.css"/>

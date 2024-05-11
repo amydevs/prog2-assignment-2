@@ -14,8 +14,49 @@
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>  
 
-<VBox styleClass="background"  alignment="CENTER" prefHeight="300" prefWidth="500" spacing="20" xmlns:fx="http://javafx.com/fxml/1" >
-   
+<VBox
+    fx:controller="controller.RecordController"
+    styleClass="background"
+    alignment="CENTER"
+    prefHeight="300"
+    prefWidth="500"
+    spacing="20"
+    xmlns:fx="http://javafx.com/fxml/1"
+>
+    <padding>
+        <Insets top="0" bottom="10" left="0" right="0" />
+    </padding>
+    <children>
+        <Label text="Season Record" styleClass="label-h2" />
+        <TableView prefWidth="300" prefHeight="250" fx:id="recordsTableView">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <columns>
+                <TableColumn text="Round">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="round" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Game">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="gameNumber" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Winning Team">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="winTeam" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Losing Team">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="loseTeam" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button text="Close" onAction="#close" />
+    </children>
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>

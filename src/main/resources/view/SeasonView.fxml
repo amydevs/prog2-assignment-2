@@ -37,7 +37,7 @@
                 <Button text="Round" onAction="#roundMenu" />
                 <Button text="Current" onAction="#currentMenu" />
                 <Button text="Game" onAction="#gameMenu" />
-                <Button text="Result" />
+                <Button text="Result" onAction="#recordMenu" />
                 <Button text="Close" onAction="#close" />
             </children>
         </VBox>
